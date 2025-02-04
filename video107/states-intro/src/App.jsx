@@ -1,33 +1,30 @@
+// state -->the states are use to store the data/values of components which further change upon user interaction.
+// hooks --> hooks provide extra functionality to a javascript function or can use to use different react feature for our components
+// E.g -> state hook :- use to store the value taken from user input (in contact form suppose a user input his name then it can be display to hime by STATE HOOK) 
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+function check(count){
+  if(count == 0 ){
+    alert("Reached to zero , TMKC !!")
+  }
+}
+
 function App() {
+  // count nam ka state bananyo jiski initial value hogi 0 fir setcount nam ka function banavo jo count ko update karega
   const [count, setCount] = useState(0)
 
-  return (
+  return (  
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    {/* updating the number */}
+      <div className="count">The count is {count} </div>
+      <button onClick={()=>{setCount(count + 1 )}}>Upgrade</button>
+
+    {/* degrading the number */}
+      <button onClick={()=> {setCount(count - 1 ) , check(count)}}>Degrade</button>
+
+     
     </>
   )
 }
