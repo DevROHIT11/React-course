@@ -1,0 +1,15 @@
+
+nav , ul{
+    display: flex;
+}
+nav{
+    background-color: black;
+    color: white;
+}
+ul{
+    padding: 20px;
+    gap:2rem;
+}
+li{
+    list-style-type: none;
+}
