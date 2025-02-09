@@ -19,3 +19,12 @@
 <br> 1. cd My-app-name
 <br> 2. npm install
 <br> 3. npm run dev
+<br>
+<br>
+
+# To open any folder from terminal
+<br>
+Command :-
+<br>
+<hr>
+code -r "directory-name"
