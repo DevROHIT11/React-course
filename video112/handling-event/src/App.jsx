@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import Inputform from './components/Inputform'
 
 function App() {
   const handleclick = ()=>{
@@ -16,11 +15,12 @@ function App() {
 //   setname(e.target.value)
 // }
 
+
+
 const [form, setform] = useState({email : "" , phone : ""})
 const handleinput = (e)=>{
    setform({...form , [e.target.name] : e.target.value})
   }
-
 
   return (
     <>
@@ -35,8 +35,6 @@ const handleinput = (e)=>{
 <input name="email" onChange={handleinput} type="text" value={form.email} />
 <input name="phone" onChange={handleinput} type="text" value={form.phone} />
 
-
-{/* <Inputform/> */}
     </>
   )
 }

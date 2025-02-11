@@ -13,15 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.box{
-  background-color: green;
-  color: white;
-  width: 200px;
-  height: 100px;
-  margin: 2rem;
-
-}
-
 a {
   font-weight: 500;
   color: #646cff;

@@ -1,1 +1,0 @@
-# Exercise 12 - Handling Event in React
