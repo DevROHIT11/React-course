@@ -1,0 +1,153 @@
+html{
+  background-color: black;
+  /* color: white; */
+}
+/* App.jsx css */
+.parent{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* card css */
+.card{
+  margin: 10px;
+}
+.job-card {
+  width: 300px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* HEADER */
+.job-card-header {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.company-logo{
+  width: 46px;
+  height: 46px;
+  padding: 8px;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 50%;
+}
+.company-logo img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.save-btn {
+  background-color:white;
+  color:rgb(148, 148, 148) ;
+  border: 1px solid rgb(207, 207, 207);
+  padding: 4px 8px ;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 1px;
+}
+
+/* BODY */
+.job-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.company-name {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.company{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: none;
+}
+.posted-time {
+  margin-top: 3px;
+  margin-bottom: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ababab;
+}
+
+.job-title {
+  margin-top: 0px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* TAGS */
+.job-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: -19px;
+  margin-bottom: 55px;
+  
+}
+
+.tag {
+  background: #f2f2f2;
+  color: #575757;
+  padding: 6px 14px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.job-card-footer {
+  border-top: 1px solid rgb(202, 202, 202);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.salary {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.location {
+  margin-top: 0px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* APPLY BUTTON */
+.apply-btn {
+  margin-top: 10px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  /* font-weight: 600; */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apply-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
