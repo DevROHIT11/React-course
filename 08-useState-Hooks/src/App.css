@@ -1,0 +1,16 @@
+.Counter div {
+  display: flex;
+  flex-direction: rows;
+  align-items: center;
+  margin: 10px;
+  /* background-color: black; */
+}
+
+.Counter button {
+  height: 20px;
+  /* margin-top: 0rem; */
+}
+
+.Counter h1 {
+  margin-bottom: 0rem;
+}
