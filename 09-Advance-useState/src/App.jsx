@@ -1,121 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import  { useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+  const [num, setnum] = useState(0)
+
+  const changeval = ()=>{
+    setnum(num+1) // aysnc function , value change hogi and  previous wali value print hogi
+    console.log(num); 
+
+
+   // batch update
+    setnum(num+1)
+    setnum(num+1)
+    setnum(num+1) //  only ekbar update hoga because react batch update karta hai, isliye num+1 ke jagah prev=>prev+1 use karna chahiye
+    // Batch update in React means: React groups multiple state updates together and performs only one re-render for better performance.
+
+    // in this we used previous value so the num update by 3  but in above method we are ussing initial num value 
+    setnum(prev=>(prev+1))
+    setnum(prev=>(prev+1))
+    setnum(prev=>(prev+1))
+    
+    // see image  -> 09-Advance-useState\src\assets\explanation
+
+    
+  }
+
+  // array 
+  const [arr, setarr] = useState([1,2,3,4])
+  const [user, setuser] = useState({user: "rohit", age: 25})
+  const changearr = ()=>{
+
+    // we do this to avoid immutability of the original ones, sometime the react  wont re-render the component if we change the  original one 
+    const newarr = [...arr] // destructuring the arraay and copying it in the new array and then changing it 
+    newarr.push(5)
+    setarr(newarr)
+
+    // object destructuring
+    const newuser = {...user}
+    newuser.user = "Sapna"
+    newuser.age = 30
+    setuser(newuser)
+
+    // another method -->> take previous state -> copy it -> then add 8 at the end -> update it to ui 
+    setarr(prev=>[...prev , 8])
+    setuser(prev=>({
+      ...prev, 
+      user: "ravi", 
+      age: 40
+      })
+    )
+
+  }
+
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    <div>
+      <h1>{num}</h1>
+      <h1>{arr}</h1>
+      <h1>{user.user}, {user.age}</h1>
+      <button onClick={()=>{
+        changeval();
+        changearr();
+      }}>Change</button>
+    </div>
   )
 }
 
